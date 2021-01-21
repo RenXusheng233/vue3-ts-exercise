@@ -1,15 +1,22 @@
 <template>
-  <div class="home">home</div>
+  <!-- FIXME: 竟然不支持v-model:xxx的写法??? -->
+  <el-input placeholder="请输入" v-model="test"></el-input>
   <HelloWorld msg="hello !!"></HelloWorld>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import HelloWorld from '../../components/HelloWorld.vue'
 export default defineComponent({
   name: 'Home',
   components: {
     HelloWorld,
+  },
+  setup() {
+    const test = ref('home~~')
+    return {
+      test,
+    }
   },
 })
 </script>

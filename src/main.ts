@@ -5,4 +5,7 @@ import store from './store'
 
 import './style/reset.less'
 
-createApp(App).use(router).use(store).mount('#app')
+import ElementPlus from 'element-plus'
+import './style/element.css'
+
+createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
