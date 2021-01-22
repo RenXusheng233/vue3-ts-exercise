@@ -6,6 +6,6 @@ import store from './store'
 import './style/reset.less'
 
 import ElementPlus from 'element-plus'
-import './style/element.css'
+import './style/element-theme.css'
 
 createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
