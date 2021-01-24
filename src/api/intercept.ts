@@ -37,7 +37,7 @@ const errorHandler = (error: any) => {
 request.interceptors.request.use((config: AxiosRequestConfig) => {
   // 如果 token 存在
   // 让每个请求携带自定义 token
-  config.headers.Authorization = storage('localstorage').get('ACCESS_TOKEN')
+  config.headers.Authorization = storage().get('ACCESS_TOKEN')
   return config
 }, errorHandler)
 
@@ -45,7 +45,7 @@ request.interceptors.request.use((config: AxiosRequestConfig) => {
 request.interceptors.response.use((response: AxiosResponse) => {
   // 若返回的请求头中包含 authorization, 则存入到缓存中
   if (response.headers.authorization) {
-    storage('localstorage').set('ACCESS_TOKEN', response.headers.authorization)
+    storage().set('ACCESS_TOKEN', response.headers.authorization)
   }
 
   const dataAxios = response.data

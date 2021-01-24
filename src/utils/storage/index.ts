@@ -19,8 +19,12 @@ export default (store?: string): UseStoreType => {
       UseStore = localStorageAPI
       break;
 
-    default:
+    case 'sessionstorage':
       UseStore = SessionstorageAPI
+      break;
+
+    default:
+      UseStore = localStorageAPI
       break;
   }
   return new UseStore()
