@@ -10,11 +10,5 @@
     "types": ["vite/client"],
     "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "src/views/home/home.vue"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
