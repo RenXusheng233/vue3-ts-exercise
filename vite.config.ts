@@ -26,4 +26,8 @@ export default defineConfig({
   },
 
   plugins: [vue()],
+
+  optimizeDeps: {
+    include: ['element-plus/lib/locale/lang/zh-cn'],
+  },
 })

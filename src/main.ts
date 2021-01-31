@@ -5,7 +5,9 @@ import store from './store'
 
 import './style/reset.less'
 
-import ElementPlus from 'element-plus'
-import './style/element-theme.css'
+import installElementPlus from './plugins/element'
+import 'element-plus/lib/theme-chalk/index.css'
 
-createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
+const app = createApp(App)
+installElementPlus(app)
+app.use(router).use(store).mount('#app')

@@ -3,13 +3,20 @@ import { RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('@/views/home/home.vue'),
-  },
-  {
-    path: '/game',
-    name: 'Game',
-    component: () => import('@/views/game/game.vue')
+    name: 'Layout',
+    component: () => import('@/layout/base/index.vue'),
+    children: [
+      {
+        path: '/home',
+        name: 'Home',
+        component: () => import('@/views/home/index.vue'),
+      },
+      {
+        path: '/game',
+        name: 'Game',
+        component: () => import('@/views/game/index.vue'),
+      },
+    ],
   },
 ]
 
