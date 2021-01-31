@@ -1,5 +1,5 @@
 import ElementPlus from 'element-plus'
-// import '../element-variables.scss' // FIXME: 导入此文件报错
+import '../element-variables.scss'
 import locale from 'element-plus/lib/locale/lang/zh-cn'
 import { App } from 'vue'
 

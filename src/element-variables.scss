@@ -8,4 +8,6 @@ $--color-primary: hotpink;
 /* icon font path, required */
 $--font-path: '~element-plus/lib/theme-chalk/fonts';
 
-@import "~element-plus/packages/theme-chalk/src/index.scss";
+// @import "~element-plus/packages/theme-chalk/src/index.scss";
+// FIXME: 默认导入方式无法解析, 使用相对路径引入文件
+@import '../node_modules/element-plus/packages/theme-chalk/src/index.scss';
