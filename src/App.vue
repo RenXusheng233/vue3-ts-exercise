@@ -13,7 +13,7 @@ export default defineComponent({
 <style lang="less">
 #app {
   height: 100%;
-  color: #2c3e50;
+  color: #f0f6fc;
   font-size: 14px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB,
     Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji,

@@ -7,9 +7,9 @@
     <div class="menu">
       <el-menu
         mode="horizontal"
-        background-color="#343640"
+        background-color="#161B22"
         text-color="rgba(255, 255, 255, 0.65)"
-        active-text-color="#fff"
+        active-text-color="#F0F6FC"
         :default-active="activeIndex"
         @select="handleSelect"
         :router="true"
