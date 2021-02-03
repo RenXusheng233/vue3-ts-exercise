@@ -1,6 +1,40 @@
 .base-layout {
   height: 100%;
+  width: 100%;
+  min-width: 1200px;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(240, 242, 245);
+  background-color: #ecf0f2;
+
+  .el-header {
+    padding: 0;
+  }
+
+  .el-main {
+    padding: 0;
+  }
+
+  .el-footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0;
+
+    a {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    a:link {
+      color: #1890ff;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #1890ff;
+    }
+  }
 }

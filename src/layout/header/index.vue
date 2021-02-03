@@ -1,48 +1,69 @@
 <template>
   <div class="header-layout">
-    <el-menu
-      :default-active="activeIndex"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b"
-    >
-      <el-menu-item index="1">处理中心</el-menu-item>
-      <el-submenu index="2">
-        <template #title>我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-        <el-submenu index="2-4">
-          <template #title>选项4</template>
-          <el-menu-item index="2-4-1">选项1</el-menu-item>
-          <el-menu-item index="2-4-2">选项2</el-menu-item>
-          <el-menu-item index="2-4-3">选项3</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="3" disabled>消息中心</el-menu-item>
-      <el-menu-item index="4"
-        ><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item
+    <div class="title" @click="handlePushHome">
+      <img class="title-logo" src="../../assets/logo.svg" alt="Logo" />
+      <div class="title-text">noOne's 小黑屋</div>
+    </div>
+    <div class="menu">
+      <el-menu
+        mode="horizontal"
+        background-color="#343640"
+        text-color="rgba(255, 255, 255, 0.65)"
+        active-text-color="#fff"
+        :default-active="activeIndex"
+        @select="handleSelect"
+        :router="true"
       >
-    </el-menu>
+        <el-menu-item v-for="item in headerMenu" :key="item.title" :index="item.index">
+          <i :class="item.icon"></i>
+          <template v-slot:title>
+            <span class="menu-title">{{ item.title }}</span>
+          </template>
+        </el-menu-item>
+      </el-menu>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-
+import { defineComponent, onUnmounted, ref, watchEffect } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import headerMenu from '../../consts/headerMenu'
 export default defineComponent({
   name: 'header-layout',
   setup() {
-    const activeIndex = ref<string>('1')
+    /**
+     * title 相关
+     */
+    const router = useRouter()
+    // 点击 title, 返回 welcome 页
+    const handlePushHome = () => {
+      router.push('/')
+    }
 
-    const handleSelect = (key: any, keyPath: any): void => {
-      console.log(key, keyPath)
+    /**
+     * menu 相关
+     */
+    const activeIndex = ref<string>('')
+
+    // 监听 route.path, 更新activeIndex
+    const route = useRoute()
+    const stopWatchMenu = watchEffect(() => {
+      const cur = headerMenu.find((item) => item.index === route.path)
+      activeIndex.value = cur?.index || ''
+    })
+    onUnmounted(() => {
+      stopWatchMenu()
+    })
+    // 点击 menu 菜单
+    const handleSelect = (key: string): void => {
+      const cur = headerMenu.find((item) => item.index === key)
+      router.push(cur?.index || '/')
     }
 
     return {
+      handlePushHome,
+      headerMenu,
       activeIndex,
       handleSelect,
     }
@@ -50,4 +71,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+@import './index.less';
+</style>
