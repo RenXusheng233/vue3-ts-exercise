@@ -9,7 +9,7 @@
         mode="horizontal"
         background-color="#161B22"
         text-color="rgba(255, 255, 255, 0.65)"
-        active-text-color="#F0F6FC"
+        active-text-color="#f0f6fc"
         :default-active="activeIndex"
         @select="handleSelect"
         :router="true"
@@ -21,6 +21,16 @@
           </template>
         </el-menu-item>
       </el-menu>
+    </div>
+    <div class="switch">
+      <el-switch
+        v-model="themeSwitch"
+        active-color="#0d1117"
+        active-text="dark"
+        inactive-color="#f0f6fc"
+        inactive-text="light"
+        @change="handleThemeChange"
+      ></el-switch>
     </div>
   </div>
 </template>
@@ -61,11 +71,26 @@ export default defineComponent({
       router.push(cur?.index || '/')
     }
 
+    /**
+     * switch 切换主题
+     * 默认为暗黑主题
+     */
+    const themeSwitch = ref(true)
+    const handleThemeChange = (val: Boolean) => {
+      if (!val) {
+        document.documentElement.setAttribute('theme', 'light')
+      } else {
+        document.documentElement.removeAttribute('theme')
+      }
+    }
+
     return {
       handlePushHome,
       headerMenu,
       activeIndex,
       handleSelect,
+      themeSwitch,
+      handleThemeChange,
     }
   },
 })

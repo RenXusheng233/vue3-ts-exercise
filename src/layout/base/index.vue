@@ -4,7 +4,7 @@
       <layout-header></layout-header>
     </el-header>
     <el-main>
-      <router-view style="background-color: #0d1117"></router-view>
+      <router-view></router-view>
     </el-main>
     <el-footer v-if="route.name === 'Welcome'">
       <div>

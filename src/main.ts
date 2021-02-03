@@ -5,6 +5,7 @@ import store from './store'
 
 import './style/reset.less'
 import './style/iconfont.css'
+import './style/variable.css'
 
 import installElementPlus from './plugins/element'
 // import 'element-plus/lib/theme-chalk/index.css'
