@@ -6,8 +6,8 @@
     <el-main>
       <router-view></router-view>
     </el-main>
-    <el-footer>
-      <div v-if="route.name === 'Welcome'">
+    <el-footer v-if="route.name === 'Welcome'">
+      <div>
         <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2020040557号-1</a>
         <div>No One ©2020 Created by No One</div>
       </div>
