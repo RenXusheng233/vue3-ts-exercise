@@ -22,12 +22,19 @@
         </el-menu-item>
       </el-menu>
     </div>
+    <div class="search">
+      <el-input
+        v-model="searchWord"
+        size="mini"
+        placeholder="Search or jump to..."
+      ></el-input>
+    </div>
     <div class="switch">
       <el-switch
         v-model="themeSwitch"
         active-color="#0d1117"
         active-text="dark"
-        inactive-color="#f0f6fc"
+        inactive-color="#0d1117"
         inactive-text="light"
         @change="handleThemeChange"
       ></el-switch>
@@ -68,12 +75,21 @@ export default defineComponent({
     // 点击 menu 菜单
     const handleSelect = (key: string): void => {
       const cur = headerMenu.find((item) => item.index === key)
+      if (cur?.link) {
+        window.open(cur.link, '_blank')
+        return
+      }
       router.push(cur?.index || '/')
     }
 
     /**
+     * 搜索输入框
+     */
+    const searchWord = ref('')
+
+    /**
      * switch 切换主题
-     * 默认为暗黑主题
+     * 默认为 dark 主题
      */
     const themeSwitch = ref(true)
     const handleThemeChange = (val: Boolean) => {
@@ -89,6 +105,7 @@ export default defineComponent({
       headerMenu,
       activeIndex,
       handleSelect,
+      searchWord,
       themeSwitch,
       handleThemeChange,
     }

@@ -2,11 +2,11 @@
   <div class="welcome">
     <h1 class="welcome-title">Hi there</h1>
     <div class="welcome-content">
-      <p>Hello world!</p>
-      <p>Let nature take its right course.</p>
       <p>ヾ(◍°∇°◍)ﾉﾞ</p>
-      <p>I'm currently learning Nest and Vue3.</p>
-      <p>Also, I plan to study Algorithm and Typescript.</p>
+      <p>你看到我了</p>
+      <p>写代码很开心</p>
+      <p>生活不易, 不要为难自己</p>
+      <p>希望你今天有一个好心情</p>
     </div>
   </div>
 </template>
