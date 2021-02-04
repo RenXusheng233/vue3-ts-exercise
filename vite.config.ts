@@ -23,6 +23,25 @@ export default defineConfig({
         ignorePath: true,
       },
     },
+    hmr: {
+      overlay: true,
+    },
+  },
+
+  build: {
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+
+    // TODO: 优化打包体积
+    rollupOptions: {
+      output: {
+        manualChunks: {},
+      },
+    },
   },
 
   plugins: [vue()],
