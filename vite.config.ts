@@ -20,7 +20,7 @@ export default defineConfig({
         changeOrigin: true,
         ws: false,
         secure: false,
-        ignorePath: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
     hmr: {
