@@ -1,0 +1,26 @@
+.study {
+  height: 100%;
+  width: 100%;
+  padding: 36px 72px;
+  display: flex;
+
+  .decoration {
+    flex: 1;
+    margin-right: 36px;
+  }
+
+  .content {
+    flex: 2;
+    overflow-y: auto;
+    border: 2px solid var(--text-color);
+
+    .content-item {
+      padding-right: 40px;
+
+      /deep/.el-divider__text {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+    }
+  }
+}
