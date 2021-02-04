@@ -36,12 +36,14 @@ export default defineConfig({
       },
     },
 
-    // TODO: 优化打包体积
+    // TODO: 拆分
     rollupOptions: {
       output: {
         manualChunks: {},
       },
     },
+
+    chunkSizeWarningLimit: 800, // FIXME: 鸵鸟 = =...
   },
 
   plugins: [vue()],
