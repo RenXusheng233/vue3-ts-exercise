@@ -2,7 +2,7 @@
   "name": "vue3-ts-forr.fun",
   "version": "0.0.0",
   "scripts": {
-    "build": "vuedx-typecheck . && vite build",
+    "build": "vite build",
     "dev": "vite"
   },
   "dependencies": {
