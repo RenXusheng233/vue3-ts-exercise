@@ -1,6 +1,12 @@
 <template>
   <div class="study">
-    <div class="decoration"></div>
+    <div class="decoration">
+      <div class="decoration-outline">
+        <div class="list">list</div>
+        <div class="label">label</div>
+      </div>
+      <div class="decoration-chart">apexchart</div>
+    </div>
     <div class="content">
       <ul class="content-item" v-for="i in count" :key="i">
         <li>{{ i }}</li>
