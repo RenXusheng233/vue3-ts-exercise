@@ -6,6 +6,7 @@
         <li>{{ i }}</li>
         <el-divider content-position="center">我是分割线</el-divider>
       </ul>
+      <el-backtop target=".content" style="right: 20px; bottom: 36px"></el-backtop>
     </div>
   </div>
 </template>

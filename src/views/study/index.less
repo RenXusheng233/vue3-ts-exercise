@@ -10,9 +10,10 @@
   }
 
   .content {
+    height: 100%;
     flex: 2;
-    overflow-y: auto;
-    border: 2px solid var(--text-color);
+    overflow-y: scroll;
+    border: 1px solid var(--border-color);
 
     .content-item {
       padding-right: 40px;
@@ -21,6 +22,10 @@
         background-color: var(--bg-color);
         color: var(--text-color);
       }
+    }
+
+    .el-backtop {
+      background-color: var(--backtop-color);
     }
   }
 }

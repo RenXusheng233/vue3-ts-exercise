@@ -8,7 +8,7 @@ interface Menu {
 const headerMenu: Array<Menu> = [
   {
     index: '/study',
-    title: '学习',
+    title: '归档',
     icon: 'icon_tubiaozhizuomoban-',
   },
   {
