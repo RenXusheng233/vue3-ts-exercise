@@ -5,6 +5,7 @@
   --track-color: #0d1117;
   --thumb-color: #388bfc;
   --backtop-color: #161b22;
+  --backtop-text-color: #388bfc;
 }
 
 :root[theme='light'] {
@@ -14,4 +15,5 @@
   --track-color: #fff;
   --thumb-color: #0d1117;
   --backtop-color: #fff;
+  --backtop-text-color: #0d1117;
 }
