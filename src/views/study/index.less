@@ -7,7 +7,7 @@
   .decoration {
     width: 100%;
     height: 100%;
-    flex: 1;
+    flex: 2;
     margin-right: 24px;
     display: flex;
     flex-direction: column;
@@ -32,12 +32,50 @@
       height: 48%;
       border: 1px solid var(--border-color);
       overflow-y: auto;
+
+      .el-calendar {
+        background-color: var(--bg-color);
+
+        :deep(.el-calendar__title) {
+          color: var(--text-color);
+        }
+
+        :deep(.el-button) {
+          color: var(--text-color);
+          background-color: var(--bg-color);
+        }
+
+        :deep(.el-calendar__body) {
+          padding: 12px 20px;
+
+          th {
+            color: var(--text-color);
+          }
+
+          .el-calendar-table td.is-today {
+            color: #388bfc;
+          }
+
+          .is-selected {
+            background-color: var(--calendar-bg-color);
+            color: #388bfc;
+          }
+
+          .el-calendar-day {
+            height: 37px;
+          }
+
+          .el-calendar-day:hover {
+            background-color: var(--calendar-bg-color);
+          }
+        }
+      }
     }
   }
 
   .content {
     height: 100%;
-    flex: 1;
+    flex: 3;
     overflow-y: scroll;
     border: 1px solid var(--border-color);
 

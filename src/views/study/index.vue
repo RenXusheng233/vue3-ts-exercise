@@ -24,7 +24,7 @@ import { defineComponent, ref } from 'vue'
 export default defineComponent({
   name: 'Study',
   setup() {
-    const calendarVal = ref(new Date())
+    const calendarVal = ref<Date>(new Date())
 
     const count = ref<number>(50)
 
