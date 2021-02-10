@@ -7,9 +7,12 @@ import './style/reset.less'
 import './style/iconfont.css'
 import './style/variable.css'
 
+// Element-plus
 import installElementPlus from './plugins/element'
-// import 'element-plus/lib/theme-chalk/index.css'
+
+// apexcharts
+import VueApexCharts from 'vue3-apexcharts'
 
 const app = createApp(App)
 installElementPlus(app)
-app.use(router).use(store).mount('#app')
+app.use(router).use(store).use(VueApexCharts).mount('#app')
