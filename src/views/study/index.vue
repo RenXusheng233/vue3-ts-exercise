@@ -18,7 +18,7 @@
         <li>{{ i }}</li>
         <el-divider content-position="center">我是分割线</el-divider>
       </ul>
-      <el-backtop target=".content" style="right: 70px; bottom: 25px"></el-backtop>
+      <el-backtop target=".content" style="right: 90px; bottom: 25px"></el-backtop>
     </div>
   </div>
 </template>
@@ -36,56 +36,48 @@ export default defineComponent({
         {
           data: [
             {
-              x: 'New Delhi',
+              x: 'html',
               y: 218,
             },
             {
-              x: 'Kolkata',
+              x: 'css',
               y: 149,
             },
             {
-              x: 'Mumbai',
-              y: 184,
-            },
-            {
-              x: 'Ahmedabad',
-              y: 55,
-            },
-            {
-              x: 'Bangaluru',
+              x: 'javascript',
               y: 84,
             },
             {
-              x: 'Pune',
+              x: 'typescript',
+              y: 55,
+            },
+            {
+              x: 'nodejs',
+              y: 84,
+            },
+            {
+              x: 'koajs',
               y: 31,
             },
             {
-              x: 'Chennai',
+              x: 'nestjs',
               y: 70,
             },
             {
-              x: 'Jaipur',
-              y: 30,
+              x: 'vuejs',
+              y: 80,
             },
             {
-              x: 'Surat',
+              x: 'reactjs',
               y: 44,
             },
             {
-              x: 'Hyderabad',
+              x: 'algorithm',
               y: 68,
             },
             {
-              x: 'Lucknow',
-              y: 28,
-            },
-            {
-              x: 'Indore',
-              y: 19,
-            },
-            {
-              x: 'Kanpur',
-              y: 29,
+              x: 'design',
+              y: 48,
             },
           ],
         },
