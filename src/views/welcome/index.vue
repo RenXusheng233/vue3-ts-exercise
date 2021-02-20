@@ -19,9 +19,11 @@ export default defineComponent({
   name: 'welcome',
 
   setup() {
-    http.get('welcome').then((res) => {
+    const fetchWelcomeWord = async () => {
+      const res = await http.get('welcome')
       console.log(res)
-    })
+    }
+    fetchWelcomeWord()
   },
 })
 </script>
