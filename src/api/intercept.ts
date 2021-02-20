@@ -9,7 +9,7 @@ import { get } from 'lodash'
 // 创建 axios 实例
 const request = axios.create({
   // API 请求的默认前缀
-  baseURL: process.env.VUE_APP_BASE_URL,
+  baseURL: import.meta.env.VITE_APP_BASE_URL, // 可以使用, 但 ts 会报类型错误, 待解决
   timeout: 10000, // 请求超时时间
 })
 

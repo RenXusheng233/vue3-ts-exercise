@@ -1,6 +1,8 @@
 /**
  * 封装对外接口
  */
+import { localStorageAPI } from './localstorage'
+import { SessionstorageAPI } from './sessionstorage'
 
 interface UseStoreType {
   set: Function
@@ -14,15 +16,15 @@ export default (store?: string): UseStoreType => {
   let UseStore
   switch (store) {
     case 'localstorage':
-      UseStore = require('./localstorage').localStorageAPI
+      UseStore = localStorageAPI
       break
 
     case 'sessionstorage':
-      UseStore = require('./sessionstorage').SessionstorageAPI
+      UseStore = SessionstorageAPI
       break
 
     default:
-      UseStore = require('./localstorage').localStorageAPI
+      UseStore = localStorageAPI
       break
   }
   return new UseStore()
