@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import { createLogger, createStore } from 'vuex'
 import { state } from './state'
 
 export default createStore({
@@ -6,4 +6,6 @@ export default createStore({
   mutations: {},
   actions: {},
   modules: {},
+  strict: true,
+  plugins: [createLogger()],
 })
