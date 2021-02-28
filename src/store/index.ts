@@ -7,5 +7,5 @@ export default createStore({
   actions: {},
   modules: {},
   strict: true,
-  plugins: [createLogger()],
+  plugins: [createLogger({ collapsed: true })],
 })
