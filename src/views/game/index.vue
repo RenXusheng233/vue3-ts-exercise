@@ -1,5 +1,13 @@
 <template>
-  <div class="game">game</div>
+  <div class="game">
+    <div class="carousel">
+      <el-carousel :interval="4000" type="card" height="400px">
+        <el-carousel-item v-for="item in 6" :key="item">
+          <h3 class="medium">{{ item }}</h3>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -9,4 +17,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+@import './index.less';
+</style>

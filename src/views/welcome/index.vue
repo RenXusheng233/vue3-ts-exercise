@@ -13,9 +13,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import http from '../../api/intercept'
 
 export default defineComponent({
   name: 'welcome',
+
+  setup() {
+    const fetchWelcomeWord = async () => {
+      const res = await http.get('welcome')
+      console.log(res)
+    }
+    fetchWelcomeWord()
+  },
 })
 </script>
 

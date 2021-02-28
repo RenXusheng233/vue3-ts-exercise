@@ -7,8 +7,10 @@ const pathResolve = (pathStr: string): string => {
 }
 
 export default defineConfig({
-  alias: {
-    '@': pathResolve('./src'),
+  resolve: {
+    alias: {
+      '@': pathResolve('./src'),
+    },
   },
 
   server: {
@@ -16,7 +18,7 @@ export default defineConfig({
     https: false,
     proxy: {
       '/api': {
-        target: 'http://',
+        target: 'http://localhost:3000',
         changeOrigin: true,
         ws: false,
         secure: false,
