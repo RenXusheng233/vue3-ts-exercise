@@ -6,10 +6,13 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 import storage from '../utils/storage'
 import { get } from 'lodash'
 
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
 // 创建 axios 实例
 const request = axios.create({
   // API 请求的默认前缀
-  baseURL: import.meta.env.VITE_APP_BASE_URL, // 可以使用, 但 ts 会报类型错误, 待解决
+  baseURL: import.meta.env.VITE_APP_BASE_URL,
   timeout: 10000, // 请求超时时间
 })
 
@@ -22,7 +25,7 @@ const errorHandler = (error: any) => {
       break
     case 401:
       error.message = '未授权，请登录'
-      window.location.href = '/login' // FIXME: router.push
+      router.push('/login')
       storage().remove('ACCESS_TOKEN')
       break
     case 403:
